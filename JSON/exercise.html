@@ -1,11 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title> exercise practice</title>
+    <title>exercise practice</title>
+    <style>
+      #button_first {
+        margin: 20px;
+        height: 50px;
+        width: 50px;
+        border: none;
+        color: rgb(11, 24, 19);
+      }
+      .js-odd {
+        background-color: rgba(230, 33, 33, 0.61);
+      }
+      .js-even {
+        background-color: rgba(214, 22, 205, 0.514);
+      }
+    </style>
   </head>
   <body>
+    <h3 id="greeting"></h3>
+    <button id="button_first" onclick="buttonPress();"></button>
+    <script>
+      let noOfClicked = localStorage.getItem ('noOfclicked') || 0;
+      function buttonPress() {
+        noOfClicked++;
+        localStorage.setItem('noOfclicked',noOfClicked);
+        updateButton();
+      }
+      function updateButton() {
+        let button = document.querySelector("#button_first");
+       
+        if (noOfClicked % 2 === 1) {
+          button.classList.remove("js-even");
+          button.classList.add("js-odd");
+        } else {
+          button.classList.remove("js-odd");
+          button.classList.add("js-even");
+        }
+         button.innerText = noOfClicked;
+      }
+      updateButton();
 
-
-
+      function doGreeting(personName = "dear") {
+        let date = new Date();
+        let hours = date.getHours();
+        console.log(hours);
+        console.log(date);
+        let heading = document.querySelector("#greeting");
+        if (hours > 1 && hours < 12) {
+          console.log("good morning");
+          heading.innerHTML = `good night ${personName}`;
+        } else if (hours > 12 && hours < 16) {
+          console.log("good afternoon");
+          heading.innerHTML = `good afternoon ${personName}`;
+        } else if (hours > 16 && hours < 18) {
+          console.log("good evening");
+          heading.innerHTML = `good evening ${personName}`;
+        } else if (hours > 18 && hours < 24) {
+          console.log("good night");
+          heading.innerHTML = `good night ${personName}`;
+        }
+      }
+      doGreeting("SACHIN");
+    </script>
   </body>
 </html>
