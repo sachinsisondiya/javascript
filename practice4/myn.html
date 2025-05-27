@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Document</title>
+   <style>
+    #first{
+      text-align: center;
+      font-size: 12px;
+      background-color:lightgreen;
+      border: 0px;
+      text-transform: capitalize;
+    
+      padding-left: 15px;
+      padding-right: 15px;
+      padding-top: 5px;
+      padding-bottom: 5px;
+      border-radius: 10px;
+
+    }
+    .second{
+      text-transform: uppercase;
+      width: 150px;
+      font-size: 12px;
+      background-color: aliceblue;
+      border: 2px solid black;
+      border-radius:10px;
+      padding: 3px;
+    }
+  </style>
+</head>
+<body>
+   <button id="first" onclick="cartQuantity+=1; document.querySelector('#cart').innerHTML=`your cart has ${cartQuantity} items`;">add to bag</button>
+    <button class="second" onclick="cartQuantity-=1; document.querySelector('#cart').innerHTML=`your cart has ${cartQuantity} items`;">move to WISHLIST</button>
+    <button id="first" onclick="cartQuantity+=2; document.querySelector('#cart').innerHTML=`your cart has ${cartQuantity} items`;">add 1+1 sale itme </button>
+     
+   <h1 id="cart"> your bag has 0 items</h1>
+   <script>
+    let cartQuantity=0;
+    document.querySelector('#cart').innerHTML=`your cart has ${cartQuantity} items`;
+   </script>
+  
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  <title>calculator</title>
+  <style>
+    .first{
+      width:200px;     
+      border:1px solid grey;
+      border-radius:5px;
+      
+    }
+    .inp{
+      margin: 10px;
+     
+      width:85%;
+      font-size: 25px;
+    }
+    .button{
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+
+    }
+    .cc{
+      
+      margin:3px;
+      height:40px;
+      width:45px;
+     
+    
+    }
+
+  </style>
+</head>
+<body>
+  <header></header>
+  <main>
+    <div class="first">
+      <input class="inp" type="text" readonly>
+      <div class="button">
+        
+        <button class="cc" onclick="currentDisplay=` `;
+        document.querySelector('.inp').value=currentDisplay">C</button>
+
+        <button class="cc" onclick="currentDisplay= currentDisplay + '1';
+        document.querySelector('.inp').value=currentDisplay">1</button>
+
+        <button class="cc"  onclick="currentDisplay=currentDisplay+'2';
+        document.querySelector('.inp').value=currentDisplay">2</button>
+
+        <button class="cc"  onclick="currentDisplay+= '+';
+        document.querySelector('.inp').value=currentDisplay">+</button>
+
+        <button class="cc"  onclick="currentDisplay=currentDisplay+'3';
+        document.querySelector('.inp').value=currentDisplay">3</button>
+
+        <button class="cc"  onclick="currentDisplay=currentDisplay+'4';
+        document.querySelector('.inp').value=currentDisplay">4</button>
+
+        <button class="cc"  onclick="currentDisplay=currentDisplay + '-';
+        document.querySelector('.inp').value=currentDisplay">-</button>
+
+        <button class="cc"  onclick="currentDisplay=currentDisplay+'5';
+        document.querySelector('.inp').value=currentDisplay">5</button>
+
+        <button class="cc" onclick="currentDisplay=currentDisplay+'6';
+        document.querySelector('.inp').value=currentDisplay">6</button>
+
+        <button class="cc" onclick="currentDisplay+='*';
+        document.querySelector('.inp').value=currentDisplay">*</button>
+
+        <button class="cc" onclick="currentDisplay=currentDisplay+'7';
+        document.querySelector('.inp').value=currentDisplay">7</button>
+
+        <button class="cc" onclick="currentDisplay=currentDisplay+'8';
+        document.querySelector('.inp').value=currentDisplay">8</button>
+
+        <button class="cc" onclick="currentDisplay+='/';
+        document.querySelector('.inp').value=currentDisplay">/</button>
+
+        <button class="cc" onclick="currentDisplay=eval(currentDisplay);
+        document.querySelector('.inp').value=currentDisplay">=</button>
+
+        <button class="cc" onclick="currentDisplay=currentDisplay+'9';
+        document.querySelector('.inp').value=currentDisplay">9</button>
+
+        <button class="cc" onclick="currentDisplay=currentDisplay+'0';
+        document.querySelector('.inp').value=currentDisplay">0</button>
+
+        <button class="cc" onclick="currentDisplay=currentDisplay +'.';
+        document.querySelector('.inp').value=currentDisplay">.</button>
+
+      </div>
+    </div>
+  </main>
+  <footer></footer>
+  <script>
+    let currentDisplay= ' ';
+    document.querySelector('.inp').value=currentDisplay;
+
+  </script>
+  
+</body>
+</html>

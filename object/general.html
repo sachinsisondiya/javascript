@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  <title>object</title>
+</head>
+<body>
+  <script>
+   /* let product={
+      company : 'mango',
+      'item-name':'cotton striped t-shirt',
+      price:24,
+    };
+    console.log(typeof product);
+    console.log(product.company);
+    console.log(product.items_name);
+    console.log(product.price);
+    product.company='banana';
+    console.log(product.company);*/
+    // when we assighn item -name then use [] for accessing
+
+    //let propertyName = 'item-name';
+    //console.log(product[propertyName]);
+
+    //delete product.company;
+    //console.log(product);
+
+    let product={
+      company : 'mango',
+      'item-name':'cotton striped t-shirt',
+      price:24,
+      productDisplay: function(){
+        console.log(`price of product is ${product.price}`)
+      }
+    };// this.price use this instead of product.price
+
+    product.productDisplay();
+    // autoboxing
+    console.log('to thsi'.toUpperCase());
+    console.log('my name is sachin'.length);
+    console.log('my name is sachin'.replace('sachin','monty'));
+     let a=5;
+     let b=a;
+     console.log(`a=${a} b=${b}`);
+     a=8;                          
+     console.log(`a=${a} b=${b}`); // it value change because of permitive
+
+     let x={num:5};
+     let y=a;
+     console.log(`x=${x.num}  y=${y}`);
+     x.num=8;
+     console.log(`x=${x.num} y=${y}`); // value remain un change due to refrence in object
+
+     // if you want compare two object then you can do deep equal not with == or === because of refrence in object
+     
+
+     // destructuring
+     let {company,price}=product;
+     console.log(price);
+     console.log(company);
+
+
+
+     
+  </script>
+</body>
+</html>

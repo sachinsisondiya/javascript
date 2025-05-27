@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  <title>cricket game</title>
+  <style>
+    body{
+      text-align: center;
+      text-transform: capitalize;
+    }
+    .button{
+      text-transform: capitalize;
+    }
+    
+  </style>
+</head>
+<body>
+  <header></header>
+  <main>
+    <h1>bat ball stump game</h1>
+    <div class="container">
+        <button class="button" onclick ="
+        // this will show how the computer choose bat ,ball , stump
+        
+         randomNumber=Math.random() * 3;
+          let computerChoice=generateComputerChoice();
+        
+           let result=getResult('Bat',computerChoice);
+           showResult('Bat',computerChoice,result);
+        
+        ">bat</button>
+           
+
+        <button class="button" onclick="
+         randomNumber=Math.random() * 3;
+          coumputerChoice=generateComputerChoice();
+          result=getResult('Ball',computerChoice);
+           
+           showResult('Ball',computerChoice,result)" >ball</button>
+
+        <button class="button" onclick="
+         randomNumber=Math.random() * 3;
+          computerChoice=generateComputerChoice();
+          result=getResult('Stump',computerChoice);
+           showResult('Stump',computerChoice,result);
+           " >stump</button>
+    </div>
+    <script>
+      let score={
+        win:0,
+        lost:0,
+        tie:0,
+        displayScore:function(){
+          return  `WIN:${score.win}  LOSE:${score.lost} TIE:${score.tie}`;
+        }
+
+      };
+      function generateComputerChoice(){
+        let randomNumber=Math.random() * 3;
+        if(randomNumber>0 && randomNumber<=1){
+           return 'Bat';//console.log('computer choice is bat')
+           } 
+           else if(randomNumber>1 && randomNumber<=2){
+             return'Ball';
+           //console.log('computer choose to ball')
+           }
+           else if(randomNumber>2 && randomNumber<3)
+           {
+               return 'Stump';
+           // console.log('computer chose to stump')
+           }
+          }
+           // function for result
+
+           function getResult(userMove,computermove){
+            if(userMove==='Bat'){
+              if(computermove==='Ball'){
+                score.win++;
+                  return 'user won.';
+           }
+           else if(computermove==='Bat'){
+               score.tie++;
+                return 'Tie' 
+           }
+           else if(computermove==='Stump'){
+                score.lost++;
+                return'computer win';
+           }
+           }
+           else if(userMove==='Ball'){
+            if(computermove==='Ball'){
+              score.tie++;   
+                return 'tie';
+           }
+           else if(computermove==='Bat'){
+                 score.lost++;
+                 return 'computer won.' 
+           }
+           else if(computermove==='Stump'){
+                score.win++;
+                 return 'user won.';
+           }
+           }
+           else{
+            if(computermove==='Ball'){
+                score.lost++;   
+                 return'computer won.';
+           }
+           else if(computermove==='Bat'){
+               score.win++;
+               return'user won.' 
+           }
+           else if(computermove==='Stump'){
+                  score.tie++;
+                  return'tie';
+           }
+
+           }
+      }
+      function showResult(userMove,computerMove,result){
+        alert(`you choose to ${userMove}. computer choose to ${computerMove}. and
+         ${result}
+
+        ${score.displayScore()}
+       `);
+      }
+    </script>
+  </main>
+  <footer></footer>
+  <script>
+
+  </script>
+</body>
+</html>
