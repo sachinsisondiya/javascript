@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ 
+  <title>practice set</title>
+  <style>
+    .btn{
+      height: 30px;
+      width:80px;
+      background-color: red;
+      color: white;
+      border-radius: 4px;
+      background-color: red;
+      border:none;
+
+    }
+    .js-size{
+      
+      height:40px;
+      width:160px;
+    }
+  </style>
+</head>
+<body>
+  <button class="btn">clickme</button>
+  <script>
+     let element=document.querySelector('.btn');
+    function change(){
+      
+    let element=document.querySelector('.btn');
+    element.classList.add('js-size');
+    }
+    element.addEventListener('click', event =>{
+      setTimeout(change,2000);
+
+    })
+    let arr=[1,2,3,4,5,6];
+    let sum=0;
+    arr.forEach(function(a){
+      console.log(sum+=a);
+    })
+    let square=arr.map(num=> num*num);
+    console.log(square);
+
+
+    /*let greetint=()=>{
+      console.log('namste');
+    }
+    let runTwice=input=>{
+      input();
+    }
+    runTwice(greetint);
+
+
+   /* let multiply= (num1,num2) => num1*num2;
+   // console.log(multiply(2,4));
+    let runTwice = (multiply(4,6)) => {
+      console.log("done");
+    }
+    console.log(runTwice(multiply(4,6)));
+    */
+
+
+  </script>
+  
+</body>
+</html>
